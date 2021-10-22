@@ -1,14 +1,10 @@
 import firebaseConfig from "./config.js";
 import { checkIfInRange } from "./utils.js";
-//import { test } from "./lineconfig.js";
+import { test } from "./lineconfig.js";
 import { Addtodata } from "./addtodatafire.js";
 
 const main = async () => {
-  // const day = new Date().getDate();
-  // const m = new Date().getMonth() + 1;
-  // const y = new Date().getFullYear();
-  //const minut = new Date().getMinutes();
-  //const date = new Date(`${m}/${day}/${y}/00:00:00`);
+  // let count = 0;
   const museums = ["museum", "museum02"];
   museums.forEach(async (museum) => {
     console.log(`start watching: ${museum}`);
@@ -35,15 +31,13 @@ const main = async () => {
           console.log(
             `data not in range alert: ${selectedUser.titleRoom}: ligth ${data.ligth} :humadity ${data.humadity}`
           );
-          //await test(selectedUser.titleRoom, data.ligth, data.humadity, museum);
+          await test(selectedUser.titleRoom, data.ligth, data.humadity, museum);
 
           return;
         }
       });
     });
   });
-
-  //console.log(minut % 5);
 };
 
 main();
