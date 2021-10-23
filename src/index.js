@@ -21,16 +21,12 @@ const main = async () => {
     users.forEach((user) => {
       const mydata = firebaseConfig.database().ref(`data/${user.IDcontroller}`);
       mydata.on("value", async (datasnap) => {
-        const selectedUser = await user;
+        const selectedUser = user;
         const data = await datasnap.val();
 
         await Addtodata(selectedUser.IDcontroller, data.humadity, data.ligth);
 
         if (checkIfInRange(selectedUser, data)) {
-          console.log(`notify here ${museum}`);
-          console.log(
-            `data not in range alert: ${selectedUser.titleRoom}: ligth ${data.ligth} :humadity ${data.humadity}`
-          );
           await test(selectedUser.titleRoom, data.ligth, data.humadity, museum);
 
           return;

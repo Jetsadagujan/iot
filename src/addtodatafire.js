@@ -49,7 +49,7 @@ export const Addtodata = async (IDcontroller, humadity, ligth) => {
           ligth: [ligth],
           maxHumidity: humadity,
           minHumidity: humadity,
-          maxLight: ligth,
+          maxLigth: ligth,
           minLigth: ligth,
         });
     }
@@ -68,7 +68,7 @@ export const Addtodata = async (IDcontroller, humadity, ligth) => {
           ligth: [ligth],
           maxHumidity: [humadity],
           minHumidity: [humadity],
-          maxLight: [ligth],
+          maxLigth: [ligth],
           minLigth: [ligth],
           time: [`${new Date().getHours()}:${new Date().getMinutes()}`],
           createdAt: new Date(
@@ -88,7 +88,7 @@ export const Addtodata = async (IDcontroller, humadity, ligth) => {
         arrL.push(ligth);
         let maxH = checkSection[idsection].maxHumidity;
         let minH = checkSection[idsection].minHumidity;
-        let maxL = checkSection[idsection].maxLight;
+        let maxL = checkSection[idsection].maxLigth;
         let minL = checkSection[idsection].minLigth;
         if (maxH < humadity) {
           maxH = humadity;
@@ -112,7 +112,7 @@ export const Addtodata = async (IDcontroller, humadity, ligth) => {
             ligth: arrL,
             maxHumidity: maxH,
             minHumidity: minH,
-            maxLight: maxL,
+            maxLigth: maxL,
             minLigth: minL,
           });
 
@@ -153,11 +153,11 @@ export const Addtodata = async (IDcontroller, humadity, ligth) => {
               const arrLigth = checkData[id].ligth;
               const maxHumidity = checkData[id].maxHumidity;
               const minHumidity = checkData[id].minHumidity;
-              const maxLight = checkData[id].maxLight;
+              const maxLigth = checkData[id].maxLigth;
               const minLigth = checkData[id].minLigth;
               maxHumidity.push(maxH);
               minHumidity.push(minH);
-              maxLight.push(maxL);
+              maxLigth.push(maxL);
               minLigth.push(minL);
               arrH.map((valueH, indexH) => {
                 countH = indexH + 1;
@@ -182,7 +182,7 @@ export const Addtodata = async (IDcontroller, humadity, ligth) => {
                   ligth: arrLigth,
                   maxHumidity: maxHumidity,
                   minHumidity: minHumidity,
-                  maxLight: maxLight,
+                  maxLigth: maxLigth,
                   minLigth: minLigth,
                   time: timeh,
                 });
@@ -196,7 +196,7 @@ export const Addtodata = async (IDcontroller, humadity, ligth) => {
                   ligth: [ligth],
                   maxHumidity: humadity,
                   minHumidity: humadity,
-                  maxLight: ligth,
+                  maxLigth: ligth,
                   minLigth: ligth,
                 });
             }
