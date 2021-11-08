@@ -1,8 +1,8 @@
-export const checkIfInRange = (user, data) => {
+export const checkIfInRange = (data) => {
   const isNotInRangeLigth =
-    data.ligth > user.maxLigth || data.ligth < user.minLigth;
+    data.ligth > data.maxLigth || data.ligth < data.minLigth;
   const isNotInRangeHumadity =
-    data.humadity > user.maxHumidity || data.humadity < user.minHumidity;
+    data.humadity > data.maxHumidity || data.humadity < data.minHumidity;
 
   return isNotInRangeLigth || isNotInRangeHumadity;
 };
